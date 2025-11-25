@@ -18,8 +18,8 @@
             /* Colores */
 
             :root{
-                --figura: #000;
-                --fondo: #fff;
+                --figura: #white;
+                --fondo: #red;
             }
 
             /* Body y fuentes base */
@@ -32,14 +32,20 @@
                 background: var(--fondo);
                 color: var(--figura);
             }
-
+            .fondo {
+                background-image: url("peru_bandera.png"); /* ¡REEMPLAZA ESTO! */
+                background-size: cover; /* Hace que la imagen cubra todo el elemento */
+                background-position: center center; /* Centra la imagen */
+                background-repeat: no-repeat; /* Evita que la imagen se repita */
+            }
+            
             /* Header */
             header {
                 width: 100%;
                 min-height: 90svh;
                 padding: 0;
                 margin: 0;
-                background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 4) 90vh), url("https://www.infobae.com/new-resizer/d6B9iKFMlztidbjW1KNsWUXRJSI=/arc-anglerfish-arc2-prod-infobae/public/ESMWDG2KPNAOXOEXPVPA47O3HA.png");
+                background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 4) 90vh), url("peru_bandera.png");
                 background-size:100% auto;
                 text-align: center;
                 display: flex;
@@ -120,7 +126,7 @@
             p span {
                 border-radius: 6px 6px;
                 padding: 0 0.5rem 0 1.5rem;
-                background-color: #a5d8f8;
+                background-color: red;
                 background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M5.47,58.58H17A44.19,44.19,0,0,0,5.47,82.93Zm17.84,0h7.62l-3.56-35.8,13.4-5.66V30.65l12.06,4.8-4.06,22A31.82,31.82,0,0,0,18.39,89.08H9.53A40.25,40.25,0,0,1,23.31,58.58ZM50,61.9A27.18,27.18,0,0,1,77.18,89.08h-9a18.27,18.27,0,1,0-36.53,0H22.82A27.18,27.18,0,0,1,50,61.9Zm0,13.28a13.86,13.86,0,0,1,13.78,13.9H54.92a4.92,4.92,0,0,0-9.84,0h-9A14,14,0,0,1,50,75.18Zm8.24-16.6a35.85,35.85,0,0,0-5.29-1L57.5,32.87,45,28V15.28l4.42-1.85L69.56,18.6l3.81,40h3.32a40.25,40.25,0,0,1,13.78,30.5H81.61A31.68,31.68,0,0,0,58.24,58.58Zm24.72,0H94.53V82.93A45.16,45.16,0,0,0,83,58.58Z"></path></svg>');
                 background-position: 0.3rem 0;
                 background-size: 1rem 1rem;
@@ -168,7 +174,7 @@
 
             figure figcaption {
                 font-size: 90%;
-                color: gray;
+                color: #ff0000;
                 padding: 0.5rem;
             }
 
@@ -188,7 +194,7 @@
 
             th,
             td {
-                border-bottom: 1px solid black;
+                border-bottom: 1px solid red;
                 border-collapse: collapse;
                 padding: 0.25rem;
                 line-height: 1.5;
@@ -204,7 +210,7 @@
             }
 
             td span {
-                color: #999;
+                color: #red;
             }
 
             th:nth-child(1),
@@ -219,7 +225,7 @@
                 height: 1.5rem;
                 margin-bottom: -0.25rem;
                 margin-left: -0.25rem;
-                fill: #2b678c;
+                fill: #red;
             }
 
             /* Mapas */
@@ -267,23 +273,7 @@
                 }
             }
 
-            /* Media Queries - Desktop */
-            @media (min-width: 1200px) {
-                main {
-                    width: 50%;
-                }
-            }
 
-            /* Media Queries - Landscape */
-            @media (orientation: landscape) {
-                main object.mobile {
-                    display: none;
-                }
-
-                main object.desktop {
-                    display: block;
-                }
-            }
 
             /* Media Queries - Desktop objects margins */
             @media (min-width: 768px) {
@@ -331,7 +321,7 @@
         </header>
 
         <main>
-            <img src="peru.png" class="mapamundi" alt="Perú, nación parte del anillo de fuego">
+            <div class="flourish-embed flourish-map" data-src="visualisation/26455482"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26455482/thumbnail" width="100%" alt="map visualization" /></noscript></div>
             <p class="lead">
                 Perú, cuna de civilizaciones milenarias y un tesoro de biodiversidad, es un país que vive en constante interacción con la fuerza de la naturaleza. 
                 Su ubicación geográfica no solo le regala una geografía espectacular, sino que también lo sitúa en una de las zonas sísmicas más activas del planeta: <em>el Cinturón o Anillo de Fuego del Pacífico.</em><br><br>
@@ -350,67 +340,15 @@
             <object data="img/timeline-desktop.svg" class="desktop" type="image/svg+xml"></object>
             <object data="img/timeline-mobile.svg" class="mobile" type="image/svg+xml"></object>
 
-            <h3>Hito en línea de tiempo</h3>
-            <p>Calidad de la información desplegada en cada párrafo, y complementada por imágenes, ilustraciones o gráficos que sean pertinentes.</p>
-
+            <h3>Terremotos a lo largo de los años</h3>
             <figure>
-                <img src="https://degreyd.minsal.cl/wp-content/uploads/2024/01/terremoto-de-chilan-1939.jpg" />
-                <figcaption>Indicar origen</figcaption>
+                <div class="flourish-embed flourish-cards" data-src="visualisation/26169962"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26169962/thumbnail" width="100%" alt="cards visualization" /></noscript></div>
+              <h3>Gráfico de victimas</h3>
+                <div class="flourish-embed flourish-pictogram" data-src="visualisation/26169103"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26169103/thumbnail" width="100%" alt="pictogram visualization" /></noscript></div>
+        
             </figure>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit de <span>7,8</span> en potencia de Magnitud de Momento…</p>
-
-            <figure>
-                <img src="https://degreyd.minsal.cl/wp-content/uploads/2024/01/terremoto-de-chilan-1939.jpg" />
-                <figcaption>Indicar origen</figcaption>
-            </figure>
-
-            <h3>Hito en línea de tiempo</h3>
-            <p>Calidad de la información desplegada en cada párrafo, y complementada por imágenes, ilustraciones o gráficos que sean pertinentes.</p>
-
-            <figure>
-                <img src="https://degreyd.minsal.cl/wp-content/uploads/2024/01/terremoto-de-chilan-1939.jpg" />
-                <figcaption>Indicar origen</figcaption>
-            </figure>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit de <span>7,8</span> en potencia de Magnitud de Momento…</p>
-
-            <figure>
-                <img src="https://degreyd.minsal.cl/wp-content/uploads/2024/01/terremoto-de-chilan-1939.jpg" />
-                <figcaption>Indicar origen</figcaption>
-            </figure>
-
-            <h3>Hito en línea de tiempo</h3>
-            <p>Calidad de la información desplegada en cada párrafo, y complementada por imágenes, ilustraciones o gráficos que sean pertinentes.</p>
-
-            <figure>
-                <img src="https://degreyd.minsal.cl/wp-content/uploads/2024/01/terremoto-de-chilan-1939.jpg" />
-                <figcaption>Indicar origen</figcaption>
-            </figure>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit de <span>7,8</span> en potencia de Magnitud de Momento…</p>
-
-            <figure>
-                <img src="https://degreyd.minsal.cl/wp-content/uploads/2024/01/terremoto-de-chilan-1939.jpg" />
-                <figcaption>Indicar origen</figcaption>
-            </figure>
-
-            <h3>Hito en línea de tiempo</h3>
-            <p>Calidad de la información desplegada en cada párrafo, y complementada por imágenes, ilustraciones o gráficos que sean pertinentes.</p>
-
-            <figure>
-                <img src="https://degreyd.minsal.cl/wp-content/uploads/2024/01/terremoto-de-chilan-1939.jpg" />
-                <figcaption>Indicar origen</figcaption>
-            </figure>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit de <span>7,8</span> en potencia de Magnitud de Momento…</p>
-
-            <figure>
-                <img src="https://degreyd.minsal.cl/wp-content/uploads/2024/01/terremoto-de-chilan-1939.jpg" />
-                <figcaption>Indicar origen</figcaption>
-            </figure>
-
-            <h2>En Perú</h2>
+                
+            <h2>Esta temblando en Perú</h2>
             <table>
                 <thead>
                     <tr>
@@ -437,8 +375,8 @@
             <p>Registros sobre <span>3.9</span> del último mes, comparado con <em>Chile</em> y <em>México.</em>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" id="viz"></svg>
 
-            <p>Texto de conclusión respecto de todo o recién presentado, apuntando a una cultura del riesgos de desastre</p>
-
+                 <h3>Conclusión</h3>
+            <p>Los terremotos ocurridos en distintas épocas de la historia peruana muestran que el país está ubicado en una de las zonas sísmicas más activas del mundo. Cada uno de estos sismos, desde los registrados en tiempos coloniales hasta los más recientes, ha dejado importantes lecciones sobre la necesidad de mejorar las construcciones, fortalecer la prevención y preparar a la población. Aunque sus impactos han sido diferentes, todos evidencian la vulnerabilidad de muchas regiones y la importancia de estar siempre atentos y organizados ante posibles emergencias. </p>
             <div class="fuentes">
                 <h4>Fuentes:</h4>
                 <p>The Lima and Callao earthquake of 1940 and its impact on health conditions. <a href="https://revistas.cientifica.edu.pe/index.php/desdeelsur/article/view/1182?">Link</a>.</p>
@@ -447,7 +385,6 @@
                 <p>Temblor en Perú: ¿cuáles han sido los sismos más mortales y destructivos de los últimos años? - Infobae. <a href="https://www.infobae.com/peru/2023/12/20/temblor-en-peru-cuales-han-sido-los-sismos-mas-mortales-y-destructivos-de-los-ultimos-anos/">Link</a>.</p>
                 <p>CRONOLOGIA HISTORICA DE LOS TERREMOTO MÁS DESTRUCTIVOS EN EL PERU - PreventionWeb.net. <a href="https://www.preventionweb.net/files/16782_historiadelosterremotosenelperu.pdf?startDownload=true">Link</a>.</p>
             </div>
-        </main>
 
         <footer>
             <p>Desarrollado para <a href="#" target="_blank">Diseño y visualización de información | Universidad de Chile</a> &copy; 2025</p>
